@@ -25,12 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://8000-ubachicodes-djangoblog-poltigtcql0.ws-eu108.gitpod.io', 'codestar.herokuapp.com']
+ALLOWED_HOSTS = [
+    'https://8000-ubachicodes-djangoblog-poltigtcql0.ws-eu108.gitpod.io/', 
+    '.herokuapp.com'
+]
 
 
 # Application definition
@@ -91,7 +94,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeanyapp.com",
+    "https://8000-ubachicodes-djangoblog-poltigtcql0.ws-eu108.gitpod.io/",
     "https://*.herokuapp.com"
 ]
 
