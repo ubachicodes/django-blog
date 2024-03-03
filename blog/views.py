@@ -4,25 +4,6 @@ from .models import Post
 
 # Create your views here.
 
-class EventsList(generic.ListView):
-
-
-    model = Event
-    template_name = "index.html"
-    paginate_by = 12
-
-
-
-def event_detail(request, event_id):
-    
-    queryset = Event.objects.all()
-    event = get_object_or_404(Event, event_id=event_id)
-
-    return render(
-        request,
-        "events/event_detail.html",
-        {"event": event}
-    )
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
@@ -43,12 +24,6 @@ def post_detail(request, slug):
 
     :template:`blog/post_detail.html`
     """
-
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
-
-    return render(
-        request,
-        "blog/post_detail.html",
-        {"post": post},
-    )
+    return render(request, "blog/post_detail.html", {"post": post},)
